@@ -1,3 +1,4 @@
+/* ---------------- BODY ---------------- */
 body {
     display: flex;
     flex-direction: column; /* garante que o header fique em cima */
@@ -8,20 +9,23 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* ---------------- LINKS ---------------- */
 a {
     text-decoration: none;
     color: white;
 }
 
-img{
+/* ---------------- IMAGENS ---------------- */
+img {
     border: 1px solid #3b3b3b;
     border-radius: 20px;
 }
 
+/* ---------------- HEADER ---------------- */
 #logo {
     height: 30px;
 }
@@ -56,14 +60,13 @@ header {
 }
 
 /* ---------------- GRID ---------------- */
-
 .grid-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 15px;
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 1200px;
     margin-top: 30px;
 }
 
@@ -75,15 +78,65 @@ header {
 }
 
 /* blocos pequenos à direita */
-.item.pequeno:nth-of-type(2) { grid-column: 2; grid-row: 1; }
-.item.pequeno:nth-of-type(3) { grid-column: 2; grid-row: 2; }
+.item.pequeno:nth-of-type(2) { 
+    grid-column: 2; 
+    grid-row: 1; 
+}
 
-/* blocos horizontais com texto */
-.item.texto {
-    grid-column: 1 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.item.pequeno:nth-of-type(3) { 
+    grid-column: 2; 
+    grid-row: 2; 
+}
+
+/* ---------------- IMAGEM E TEXTO SOBREPOSTO ---------------- */
+.item {
+    position: relative;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* zoom suave no hover */
+.item:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+/* texto sobreposto */
+.texto-sobreposto {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
     color: white;
-    font-size: 14px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* efeito hover: aparece mais forte */
+.item:hover .texto-sobreposto {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------- RESPONSIVIDADE ---------------- */
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item.grande {
+        grid-row: auto;
+    }
 }
