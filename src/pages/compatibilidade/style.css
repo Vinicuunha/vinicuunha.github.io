@@ -1,0 +1,113 @@
+/* ---------------- BODY ---------------- */
+body {
+    display: flex;
+    flex-direction: column; /* garante que o header fique em cima */
+    margin: 0;
+    padding: 0;
+    background-color: #3b3b3b;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------------- LINKS ---------------- */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ---------------- HEADER ---------------- */
+#logo {
+    height: 30px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid #FF6700;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    width: 100%;
+    height: 50px;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    align-items: center;
+    justify-content: center; 
+    color: white;
+    gap: 25px;
+    font-weight: bold;
+}
+
+.cabecalho a:hover {
+    text-decoration: none;
+    color: #FF6700;
+    border-bottom: 1px solid #FF6700;
+}
+
+main{
+    margin-top: 20px;
+    text-align: center;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+main form .campo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+main select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  align-items: center;
+}
+
+main form button {
+  align-self: center; /* faz o botão ficar centralizado dentro do form */
+  width: 200px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF6700;
+  color: white;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+h4{
+  color: #FF6700
+}
